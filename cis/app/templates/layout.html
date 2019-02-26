@@ -17,7 +17,12 @@
 		<meta name="user_token" 	content="test_token">
 		
 		{# BULMA EXTENSIONS NEEDING JS #}
-		{# <script type="text/javascript" src="/node_modules/bulma-extensions/bulma-carousel/dist/bulma-carousel.min.js"></script> #}
+		{#<!--
+		<script type="text/javascript" src="{{ url_for('static', filename='bulma-carousel/dist/js/bulma-carousel.js') }}"></script>
+		--> #}
+		<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.1/dist/js/bulma-carousel.min.js"></script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='bulma-carousel/dist/css/bulma-carousel.min.css') }}">
+
 
 		{# GOOGLE INDEXING / cf : https://support.google.com/webmasters/answer/6259634?hl=en #}
 		<meta name="google-site-verification" content="vSnFdoQsEBUIOqbQWr3h1SRXb1mu0ttVN0fo4H25XNk" />
@@ -36,6 +41,17 @@
 
 		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
+		<!-- Initialize carousels -->
+		<script>
+			window.onload = function(){
+				// cf. https://github.com/Wikiki/bulma-carousel/blob/master/demo/assets/js/main.js
+				var carousels=bulmaCarousel.attach('.carousel', {
+					slidesToScroll: 1,
+					slidesToShow: 1,
+				        infinite: true
+				});
+			};
+		</script>
 	</head>
 
 
