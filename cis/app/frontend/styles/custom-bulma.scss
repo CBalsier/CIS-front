@@ -32,8 +32,8 @@ $button-disabled-opacity: $disabled-opacity ;
 // Import the rest of Bulma at the end
 @import "../node_modules/bulma/bulma.sass";
 //@import "../node_modules/bulma-checkradio/dist/css/bulma-checkradio.sass";
-@import "../node_modules/bulma-carousel/dist/css/git-bulma-carousel-4.0.1.sass";
 //@import "../node_modules/bulma-extensions/bulma-carousel/dist/css/bulma-carousel.sass"
+@import "./git-bulma-carousel-4.0.1.sass"; // temporary fix, seems that the npm package is not up-to-date?
 
 // BULMA OVERRIDE
 
