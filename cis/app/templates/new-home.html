@@ -223,9 +223,32 @@
 <script>
 'use strict';
 
+// Old CIS-OpenScraper version
+/*
 const projectCountP = fetch('http://www.cis-openscraper.com/api/infos')
-.then(r => r.json())
-.then(res => res.counts.data)
+    .then(r => r.json())
+    .then(res => res.counts.data)
+*/
+
+// Draft/project for more complete and robust version
+/*
+const projectCountP_ = fetch('https://solidata-api.co-demos.com/api/prj/infos/get_one/5c7ebc8d328ed724cebd7fc1')
+    .then(r => r.json())
+    .then(r => {
+        r.data.datasets.dsi_list.forEach(getDScount);
+
+        function getDScount(item, index, type)
+        // type should be dsi or dso
+        {
+            console.log(item);
+        }
+    })
+*/
+
+// Quick and dirty first version (dsi id corresponds to CIS-OpenScraper export in Solidata)
+const projectCountP = fetch('https://solidata-api.co-demos.com/api/dsi/infos/get_one/5c7f0438328ed72e431f338e')
+    .then(r => r.json())
+    .then(r => r.data.data_raw.f_data_count)
 
 document.addEventListener('DOMContentLoaded', e => {
     // counter
