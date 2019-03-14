@@ -8,7 +8,7 @@ import SearchMapScreen from './components/screens/SearchMapScreen.vue'
 import CISProjectScreen from './components/screens/CISProjectScreen.vue'
 import NotFoundScreen from './components/screens/NotFoundScreen.vue'
 
-import {searchProjects, getProjectById, getSpiders} from './cisProjectSearchAPI.js';
+import {searchProjects, getProjectById, getProjectById_Solidata, getSpiders} from './cisProjectSearchAPI.js';
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
@@ -17,11 +17,11 @@ const SOURCE_FILTER_NAME = 'source_';
 
 function makeSourceFilterFromSpiders(spiders){
     return {
-        "fullname": "Source", 
+        "fullname": "Source",
         "name": SOURCE_FILTER_NAME,
         "choices": [ ...Object.entries(spiders)]
             .map(([id, {name}]) => ({
-                "fullname": name, 
+                "fullname": name,
                 "id": id,
                 "spiderId": id,
                 "name": name
@@ -77,7 +77,7 @@ const store = new Vuex.Store({
             userName: 'DAV BRU',
             userSurname: 'HARDCODED'
         },*/
-        
+
         geolocByProjectId: new Map(),
         spiders: undefined,
 
@@ -95,7 +95,7 @@ const store = new Vuex.Store({
                 error: undefined // if last search ended in an error
             }
         }
-        
+
     },
     mutations: {
         setSearchedText (state, {searchedText}) {
@@ -137,7 +137,7 @@ const store = new Vuex.Store({
                 error
             }
         },
-        
+
         setSourceFilter(state, {sourceFilter}){
             const sourceFilterIndex = state.filterDescriptions.findIndex(fd => fd.name === SOURCE_FILTER_NAME)
 
@@ -167,9 +167,9 @@ const store = new Vuex.Store({
             const selectedValues = selectedFilters.get(filter)
             if(selectedValues.has(value))
                 selectedValues.delete(value)
-            else 
+            else
                 selectedValues.add(value)
-                
+
             commit('setSelectedFilters', {selectedFilters})
             dispatch('search')
         },
@@ -218,7 +218,7 @@ const store = new Vuex.Store({
             searchPendingAbort.promise
                 .then(({projects, total}) => {
                     commit('setSearchResult', {result: {projects, total}})
-                }) 
+                })
                 .catch(error => {
                     // don't report aborted fetch as errors
                     if (error.name !== 'AbortError')
@@ -230,7 +230,7 @@ const store = new Vuex.Store({
             .then(spiders => {
                 commit('setSpiders', {spiders})
                 commit('setSourceFilter', {sourceFilter: makeSourceFilterFromSpiders(spiders)})
-            }) 
+            })
             .catch(err => console.error('err getSpiders', text, err))
         },
         findProjectsGeolocs({commit}, projects){
@@ -255,9 +255,9 @@ const store = new Vuex.Store({
                     const {latitude, longitude} = geolocs[i];
 
                     geolocByProjectId.set(
-                        id, 
+                        id,
                         (Number.isFinite(parseFloat(latitude)) && Number.isFinite(parseFloat(longitude))) ?
-                            {latitude: parseFloat(latitude), longitude: parseFloat(longitude)} : 
+                            {latitude: parseFloat(latitude), longitude: parseFloat(longitude)} :
                             false
                     )
                 })
@@ -283,9 +283,9 @@ const BRAND_DATA = Object.freeze({
 })
 
 const routes = [
-    { 
+    {
         path: '/recherche',
-        component: SearchListScreen, 
+        component: SearchListScreen,
         props(route){
             return {
                 ...BRAND_DATA
@@ -302,9 +302,9 @@ const routes = [
             next()
         }
     },
-    { 
+    {
         path: '/recherche/carte',
-        component: SearchMapScreen, 
+        component: SearchMapScreen,
         props(route){
             return {
                 ...BRAND_DATA
@@ -323,7 +323,7 @@ const routes = [
     },
     {
         path: '/project/:id',
-        component: CISProjectScreen, 
+        component: CISProjectScreen,
         props(route){
             return {
                 ...BRAND_DATA
@@ -339,7 +339,8 @@ const routes = [
 
             // get project data
             if(!project){
-                getProjectById(id)
+                getProjectById_Solidata(id)
+                //getProjectById(id)
                 .then(project => {
                     store.commit('setDisplayedProject', {project})
                 })
@@ -357,9 +358,9 @@ const routes = [
         }
     },
     {
-        path: '*', 
+        path: '*',
         name: 'error',
-        component: NotFoundScreen, 
+        component: NotFoundScreen,
         props(route){
             return {
                 ...BRAND_DATA
@@ -375,7 +376,7 @@ const router = new VueRouter({
     routes,
     scrollBehavior (to, from, savedPosition) {
         return savedPosition ? savedPosition : { x: 0, y: 0 };
-    }      
+    }
 })
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -387,4 +388,4 @@ document.addEventListener('DOMContentLoaded', () => {
         render: h => h( Vue.component('router-view') )
     })
 
-}, {once: true})  
+}, {once: true})

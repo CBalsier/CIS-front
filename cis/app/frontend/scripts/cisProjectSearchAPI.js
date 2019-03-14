@@ -2,13 +2,14 @@
 // const APISearchOrigin = 'http://www.solidata-preprod.co-demos.com';
 // const APISearchOrigin = 'http://www.solidata.co-demos.com';
 const APISearchOrigin = 'http://www.cis-openscraper.com';
+const SolidataAPISearchOrigin = 'https://www.solidata-api.co-demos.com' ;
 
 // feature test for AbortController that works in Safari 12
 let abortableFetchSupported = false;
 
 try{
     const ac = new AbortController()
-    
+
     fetch('.', {signal: ac.signal})
     .then(r => r.text())
     .then(result => {
@@ -74,7 +75,7 @@ Example of project in Mongo:
     "_id": "5ac561d23ba14c4f0972a2f2"
 }
 
-Expected output : 
+Expected output :
 
 interface CISProjectFront{
     id: CIS_ID (extends String)
@@ -164,12 +165,37 @@ export function getProjectById(id){
     .then(({query_results}) => {
         const project = query_results.find(p => p._id === id)
 
+        //console.log(query_results, project);
         return project ?
-            uniformizeProject(fromMongoModelToFrontModel(project)) : 
+            uniformizeProject(fromMongoModelToFrontModel(project)) :
             undefined;
     })
 }
 
+// Prototype; TODO discuss and find a way to process multiple datasets if necessary
+export function getProjectById_Solidata(id) {
+    let projectIdCIS = `5c7f0438328ed72e431f338e`;
+    let url = `${SolidataAPISearchOrigin}/api/dsi/infos/get_one/` + projectIdCIS;
+    // should return all results according to doc, but nope?
+    //let url = `${SolidataAPISearchOrigin}/api/dsi/infos/get_one/` + projectIdCIS +`?per_page=0`;
+
+    // should work according to doc, but… error 500 ?!
+    // id or _id here: https://github.com/entrepreneur-interet-general/solidata_backend/blob/master/solidata_api/_core/queries_db/query_utils.py#L112
+    //let url = `${SolidataAPISearchOrigin}/api/dsi/infos/get_one/` + projectIdCIS + `?item_id=` + id;
+
+    return fetch(url)
+    .then(r => r.json())
+    .then(r => r.data.data_raw)
+    .then(({f_data}) => {
+        // /!\ p.id and not p._id as previously
+        const project = f_data.find(p => p.id === id)
+
+        //console.log(f_data, project);
+        return project ?
+            uniformizeProject(fromMongoModelToFrontModel(project)) :
+            undefined;
+    })
+}
 
 export function searchProjects(text, tags, spiderIds=[], page=1, per_page=1000){
     text = text.trim();
@@ -203,13 +229,13 @@ export function searchProjects(text, tags, spiderIds=[], page=1, per_page=1000){
                     throw error
                 }
                 else{
-                    return { 
+                    return {
                         projects: Array.isArray(query_results) ? query_results.map(fromMongoModelToFrontModel).map(uniformizeProject) : [],
                         total: query_log.count_results_tot
                     }
                 }
             })
-                
+
     }
 
 }
