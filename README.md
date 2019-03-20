@@ -57,13 +57,14 @@ Please check out our *[guidelines](./GUIDELINES_DEV.md)*
 		$ npm install
 		$ npm run build
 
-1. (**if you encounter problems while building try this**)
+1. (**if you encounter problems while building try this**) 
 	
 	> 
 		$ rm -rf app/frontend/node_modules
 		$ npm install 
 		$ npm run build
-
+1. (** if you encourter `Error: ENOENT: no such file or directory, open '../static/build/bundle.js.tmp-browserify` **)
+	Go to the folder `app/static/` and create the build subfolder (`mkdir build`).
 1. **check in your browser** at `localhost:8100`
 
 
