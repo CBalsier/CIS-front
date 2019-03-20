@@ -20,9 +20,9 @@ Please check out our *[guidelines](./GUIDELINES_DEV.md)*
 
 ### _LOCALLY_
 
-1. **clone or [download](https://github.com/entrepreneur-interet-general/CIS-front/archive/master.zip) the repo**
+1. **clone or [download](https://github.com/co-demos/ApiViz/archive/master.zip) the repo**
 1. **[install MongoDB](https://docs.mongodb.com/manual/installation/) locally** or get the URI of the MongoDB you're using
-1. **go to your cis folder**
+1. **go to your ApiViz folder**
 1. **use Python 2**
 1. **install python pip and virtualenv**
 	
@@ -45,7 +45,7 @@ Please check out our *[guidelines](./GUIDELINES_DEV.md)*
 
 1. **update the `app/backend/config_secret_vars_example.py` file** with your mongoDB URI (if you're not using default mongoDB connection)
 
-1. **got to your `/cis` folder and run :**
+1. **run :**
 	> 	
 		$ python run_apiviz.py --mode=testing
 
