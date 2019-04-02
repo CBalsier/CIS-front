@@ -8,7 +8,7 @@
         - navbarConfig : <br><code>{{ this.navbarConfig }}</code><br>
     </div>
 
-    <hr> 
+    <hr>
     s-->
 
 
@@ -74,7 +74,7 @@ export default {
 
     // // here we go fetch the raw HTML content of a webpage
     // let template_url = (this.routeConfig && this.routeConfig.template_url) ? this.routeConfig.template_url : 'https://co-demos.com/error'
-    // let head = { 
+    // let head = {
     //   headers: {
     //     // 'Access-Control-Allow-Origin': '*',
     //     'accept' : 'text/html',
@@ -82,9 +82,9 @@ export default {
     // }
     // this.rawHtml = ''
     // axios.get(template_url, head)
-    //   .then( (response) => { 
-    //     // console.log(response); 
-    //     this.rawHtml = (response && response.data) ? response.data : '<br><br>there is an Error <br><br>'} 
+    //   .then( (response) => {
+    //     // console.log(response);
+    //     this.rawHtml = (response && response.data) ? response.data : '<br><br>there is an Error <br><br>'}
     //   )
     //   .catch( (err) => {this.rawHtml = '<br><br>there is an <strong> Error </strong><br><br>'} )
   },
@@ -103,17 +103,18 @@ export default {
 
       // here we go fetch the raw HTML content of a webpage
       let template_url = (this.routeConfig && this.routeConfig.template_url) ? this.routeConfig.template_url : 'https://co-demos.com/error'
-      let head = { 
+      console.log(template_url + " is template")
+      let head = {
         headers: {
-          // 'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Origin': '*', // Uncommented, to try
           'accept' : 'text/html',
         }
       }
       this.rawHtml = ''
       axios.get(template_url, head)
-        .then( (response) => { 
-          // console.log(response); 
-          this.rawHtml = (response && response.data) ? response.data : '<br><br>there is an Error <br><br>'} 
+        .then( (response) => {
+          console.log(response);
+          this.rawHtml = (response && response.data) ? response.data : '<br><br>there is an Error <br><br>'}
         )
         .catch( (err) => {this.rawHtml = '<br><br>there is an <strong> Error </strong><br><br>'} )
     },

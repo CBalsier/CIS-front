@@ -5,7 +5,7 @@
       <div class="results-count">
         <span class="nb">
           {{ pending ? '?' : total }}
-        </span> 
+        </span>
         <span>
           {{ translateBis(endpointConfigFilters, 'items_found' )}}
         </span>
@@ -15,11 +15,11 @@
 
     <div class="buttons has-addons is-right">
 
-      <router-link 
+      <router-link
         v-if="typeof endpointConfigList !== 'undefined'"
-        :disabled="endpointConfigList.is_disabled" 
-        :to="endpointConfigUrlToList.urls[0]" 
-        :class="['button', view === VIEW_LIST ? 'is-selected is-primary' : undefined]" 
+        :disabled="endpointConfigList.is_disabled"
+        :to="endpointConfigUrlToList.urls[0]"
+        :class="['button', view === VIEW_LIST ? 'is-selected is-primary' : undefined]"
         >
         <img :src="`/static/icons/${view === VIEW_LIST ? 'icon_list_blanc.svg': 'icon_list.svg'}`">
         <!-- <span>liste</span> -->
@@ -28,9 +28,9 @@
 
       <router-link
         v-if="typeof endpointConfigMap !== 'undefined'"
-        :disabled="endpointConfigMap.is_disabled" 
-        :to="endpointConfigUrlToMap.urls[0]" 
-        :class="['button', view === VIEW_MAP ? 'is-selected is-primary' : undefined]" 
+        :disabled="endpointConfigMap.is_disabled"
+        :to="endpointConfigUrlToMap.urls[0]"
+        :class="['button', view === VIEW_MAP ? 'is-selected is-primary' : undefined]"
         >
         <img :src="`/static/icons/${view === VIEW_MAP ? 'icon_map_blanc.svg': 'icon_map.svg'}`">
         <!-- <span>carte</span> -->
@@ -39,9 +39,9 @@
 
       <!-- <router-link
         v-if="typeof endpointConfigUrlToStat !== 'undefined'"
-        :disabled="endpointConfigStat.is_disabled" 
-        :to="endpointConfigUrlToStat.urls[0]" 
-        :class="['button', view === VIEW_MAP ? 'is-selected is-primary' : undefined]" 
+        :disabled="endpointConfigStat.is_disabled"
+        :to="endpointConfigUrlToStat.urls[0]"
+        :class="['button', view === VIEW_MAP ? 'is-selected is-primary' : undefined]"
         >
         <img src="/static/icons/icon_dataviz.svg">
         <span>{{ translate(configTabs('tab_stat')) }}</span>
@@ -58,15 +58,15 @@ import {VIEW_LIST, VIEW_MAP, VIEW_STAT} from '../constants.js'
 
 export default {
     name: 'CISSearchResultsCountAndTabs',
-    
+
     props: [
-      'view', 
+      'view',
       'open'
     ],
 
     data(){
       return {
-        VIEW_MAP, 
+        VIEW_MAP,
         VIEW_LIST,
         VIEW_STAT
       }
@@ -154,7 +154,7 @@ export default {
 
     &.open{
       background-color: $apiviz-grey-background;
-      
+
       top: -1rem;
       padding-top: 1rem;
     }

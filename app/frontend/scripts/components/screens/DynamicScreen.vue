@@ -2,25 +2,25 @@
   <div>
 
     <!-- NAVBAR -->
-    <NavBar 
+    <NavBar
       v-if="this.has_navbar"
-      :navbarConfig="this.navbarConfig" 
+      :navbarConfig="this.navbarConfig"
       :logo="this.globalConfig.app_logo"
       :brand="this.globalConfig.app_title.content"
-      :appLocales="this.globalConfig.app_languages" 
+      :appLocales="this.globalConfig.app_languages"
       :currentDatasetURI="currentDatasetURI"
       :localRouteConfig="localRouteConfig"
     ></NavBar>
       <!-- :currentRouteConfig="this.routeConfig"
       :localRouteConfig="localRouteConfig.field" -->
-        <!-- :logo="logo" 
+        <!-- :logo="logo"
         :brand="brand"  -->
 
 
     <!-- DYNAMIC COMPONENT -->
 
-    <!-- <component 
-      :is="this.dynamic_template" 
+    <!-- <component
+      :is="this.dynamic_template"
       :routeConfig="this.localRouteConfig"
     ></component> -->
 
@@ -46,15 +46,15 @@
 
 
     <!-- BANNER -->
-    <DynamicBanner 
+    <DynamicBanner
       v-if="this.has_banner"
       :template_url="this.getCurrentBanner.template_url"
       :dynamicTemplate="localRouteConfig.dynamic_template"
-    ></DynamicBanner> 
+    ></DynamicBanner>
 
 
     <!-- REMOTE STATICS -->
-    <DynamicStatic 
+    <DynamicStatic
       v-if="localRouteConfig.dynamic_template == 'DynamicStatic' "
       :routeConfig="localRouteConfig"
     ></DynamicStatic>
@@ -66,21 +66,21 @@
 
 
     <!-- DATA VISUALISATION -->
-    <DynamicList 
+    <DynamicList
       v-if="localRouteConfig.dynamic_template == 'DynamicList' "
       :routeConfig="localRouteConfig"
       :endPointConfig="localEndpointConfig"
       :filtersConfig="localFiltersConfig"
     ></DynamicList>
 
-    <DynamicMap 
+    <DynamicMap
       v-if="localRouteConfig.dynamic_template == 'DynamicMap' "
       :routeConfig="localRouteConfig"
       :endPointConfig="localEndpointConfig"
       :filtersConfig="localFiltersConfig"
     ></DynamicMap>
 
-    <DynamicDetail 
+    <DynamicDetail
       v-if="localRouteConfig.dynamic_template == 'DynamicDetail' "
       :routeConfig="localRouteConfig"
       :endPointConfig="localEndpointConfig"
@@ -89,20 +89,20 @@
 
 
     <!-- FOOTERS -->
-    <Footer 
+    <Footer
       v-if="this.has_footer"
-      :footerConfig="this.footerConfig" 
-      :appSocials="this.socialsConfig" 
+      :footerConfig="this.footerConfig"
+      :appSocials="this.socialsConfig"
     ></Footer>
 
     <!-- PROJECT's PARTNERS FOOTER -->
-    <DynamicStaticRaw 
+    <DynamicStaticRaw
       v-if="this.has_credits_footer"
       :templateURL="this.footerConfig.credits_footer_url"
     ></DynamicStaticRaw>
 
     <!-- CREDITS CODEMOS / REMOTE FOOTER -->
-    <DynamicStaticRaw 
+    <DynamicStaticRaw
       :templateURL="'https://raw.githubusercontent.com/co-demos/structure/master/pages-html/codemos-footer.html'"
     ></DynamicStaticRaw>
 
@@ -125,10 +125,10 @@ import DynamicDetail     from '../DynamicDetail.vue';
 
 export default {
   components: {
-    NavBar, 
-    Footer, 
+    NavBar,
+    Footer,
     DynamicBanner,
-    DynamicStatic, 
+    DynamicStatic,
     DynamicStaticRaw,
     DynamicStaticTest,
     DynamicList, 
@@ -137,7 +137,7 @@ export default {
   },
 
   props: [
-  //   'logo', 
+  //   'logo',
   //   'brand'
   ],
 
@@ -156,13 +156,13 @@ export default {
   // created: function () {
   //   console.log("\n - - DynamicScreen / created ... ")
   // },
-  
+
   beforeMount: function () {
 
     // console.log("\n - - DynamicScreen / beforeMount ... ")
     // console.log(" - - state.config : \n ", this.$store.state.config)
     // console.log(" - - DynamicScreen / this.routeConfig : \n ", this.routeConfig)
-    
+
     // set local route and endpoint config
     this.localRouteConfig = this.routeConfig
 
@@ -178,6 +178,7 @@ export default {
       // console.log(" - - DynamicScreen / path : ", path )
       this.$store.dispatch('setSearchEndpointConfig', { path : path })
       // this.$store.dispatch('setSearchEndpoint')
+      console.log("hello world", this.routeConfig.dynamic_templates)
       this.localEndpointConfig = this.$store.getters.getEndpointConfig
       // console.log(" - - DynamicScreen / localEndpointConfig : ", this.localEndpointConfig )
 
@@ -185,14 +186,14 @@ export default {
       // this.currentDatasetURI = this.$store.state.search.dataset_uri
       this.currentDatasetURI = this.localEndpointConfig.dataset_uri
       // console.log(" - - DynamicScreen / currentDatasetURI : ", this.currentDatasetURI)
-      
+
       // setting filters
       // console.log("\n - - DynamicScreen / setting filters ... ")
       this.localFiltersConfig = this.$store.getters.getEndpointConfigFilters
       // console.log(" - - DynamicScreen / this.localFiltersConfig : ", this.localFiltersConfig)
       // this.$store.commit('setDatasetFilters', this.localFiltersConfig )
       this.$store.dispatch('createDatasetFilters')
-      
+
       // setting MapSearch
       this.$store.commit('setIsMapSearch', this.routeConfig)
 
@@ -210,7 +211,7 @@ export default {
 
 
   watch: {
-    
+
     // watch the route path
     '$route.fullPath': function (newPath, oldPath) {
       // console.log('\n- - DynamicScreen / watch / $route.fullPath : ', this.$route.fullPath);
@@ -241,10 +242,10 @@ export default {
 
       if( this.localRouteConfig.dynamic_templates !== 'DynamicStatic' ) {
         // console.log('- - DynamicScreen / watch / localRouteConfig : ', this.localRouteConfig);
-        
+
         this.localEndpointConfig = this.$store.getters.getEndpointConfig
         // console.log('- - DynamicScreen / watch / localEndpointConfig : ', this.localEndpointConfig);
-        
+
         if ( currentDatasetURI !== this.currentDatasetURI ) {
         // if ( this.localEndpointConfig && currentDatasetURI !== this.currentDatasetURI ) {
           // console.log('- - DynamicScreen / watch / need to reinit filters ... ')
@@ -253,7 +254,7 @@ export default {
           this.$store.dispatch('createDatasetFilters')
         }
         if (this.localEndpointConfig) {
-          // reload results 
+          // reload results
           // console.log('- - DynamicScreen / watch / (after) dispatch search... ');
           this.$store.dispatch('search')
         }
@@ -271,11 +272,11 @@ export default {
 
 
   computed: {
-    
+
     ...mapState({
         user: 'user'
     }),
-    
+
     // GLOBAL CONFIG ELEMENTS
     globalConfig(){
       let globalConfig = this.$store.getters.getGlobalConfig
@@ -301,7 +302,7 @@ export default {
 
     // ROUTE AND ENDPOINT CONFIG ELEMENTS
     dynamic_template(){
-      return (this.routeConfig) ? this.routeConfig.dynamic_template : undefined 
+      return (this.routeConfig) ? this.routeConfig.dynamic_template : undefined
     },
     routeConfig(){
       // console.log(" - - DynamicScreen / this.$router.currentRoute.path : ", this.$router.currentRoute.path)
@@ -309,24 +310,24 @@ export default {
       // console.log(" - - DynamicScreen / routeConf : ", routeConf)
       return routeConf
     },
-    // endPointConfig(){     
+    // endPointConfig(){
     //   let endPointConfig =  this.$store.getters.getEndpointConfig
     //   // console.log(" - - endPointConfig : ", endPointConfig)
     //   return endPointConfig
     // },
 
     // SWITCHERS
-    has_navbar(){      
-      return (this.routeConfig) ? this.routeConfig.has_navbar : undefined 
+    has_navbar(){
+      return (this.routeConfig) ? this.routeConfig.has_navbar : undefined
     },
-    has_footer(){      
-      return (this.routeConfig) ? this.routeConfig.has_footer : undefined 
+    has_footer(){
+      return (this.routeConfig) ? this.routeConfig.has_footer : undefined
     },
-    has_credits_footer(){      
-      return (this.footerConfig) ? this.footerConfig.has_credits_footer : undefined 
+    has_credits_footer(){
+      return (this.footerConfig) ? this.footerConfig.has_credits_footer : undefined
     },
-    has_banner(){      
-      return (this.localRouteConfig) ? this.localRouteConfig.banner.activated : false 
+    has_banner(){
+      return (this.localRouteConfig) ? this.localRouteConfig.banner.activated : false
     },
 
     // BANNER

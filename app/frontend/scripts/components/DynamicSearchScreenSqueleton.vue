@@ -13,8 +13,8 @@
         <br><br>
       DynamicSearchSqueleton // endpointConfig : <br><code>{{ this.endpointConfig }}</code>
       <br><br>
-      DynamicSearchSqueleton // getEndpointConfigFilters : <br><code>{{ this.getEndpointConfigFilters }}</code> 
-    --> 
+      DynamicSearchSqueleton // getEndpointConfigFilters : <br><code>{{ this.getEndpointConfigFilters }}</code>
+    -->
 
   </div>
 </template>
@@ -28,14 +28,14 @@ import FiltersFeedback from './FiltersFeedback.vue';
 export default {
   name: 'DynamicSearchScreenSqueleton',
   components: {
-    // NavBar, 
-    SearchWithFilters, 
-    FiltersFeedback, 
+    // NavBar,
+    SearchWithFilters,
+    FiltersFeedback,
     // Footer
   },
 	props: [
-    // 'logo', 
-    // 'brand', 
+    // 'logo',
+    // 'brand',
     'filtersConfig',
     'mainClass'
   ],
