@@ -1,5 +1,5 @@
 <template>
-  <section class="is-light skip-navbar">
+  <!-- <section class="is-light skip-navbar"> -->
 
     <!-- DEBUGGING -->
     <!-- <div>
@@ -13,13 +13,16 @@
 
 
     <!-- MAIN PART -->
-    <div class="container">
+    <div class="skip-navbar">
+
       <span v-html="rawHtml"></span>
+
     </div>
 
 
 
-  </section>
+
+  <!-- </section> -->
 </template>
 
 <script>
@@ -45,7 +48,7 @@ export default {
 
   watch : {
     routeConfig(old){
-      console.log("\n - - DynamicStatic / watch / routeConfig ... ")
+      // console.log("\n - - DynamicStatic / watch / routeConfig ... ")
       this.rawHtml = ''
       this.getRawHtml()
     }
