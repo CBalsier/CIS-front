@@ -1,0 +1,124 @@
+@import './rem.scss';
+@import './apiviz-colors.scss';
+@import './apiviz-misc.scss';
+
+main{
+    margin-top: unset !important;
+    font-family: $family-Barlow;
+}
+
+.primary-bg-img{
+    // this image should be of color $cis-primary
+    background-image: url(https://raw.githubusercontent.com/CBalsier/test-content/master/illustrations/HP_section_1.png);
+    background-size: cover;
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: $apiviz-primary-invert;
+
+    padding: 5em 0;
+
+    h1{
+        color: $apiviz-primary-invert;
+        text-align: center;
+        margin-bottom: 1em
+    }
+
+    form{
+        background-color: $apiviz-primary-invert;
+        border-radius: 2px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+        height: rem(85px);
+
+        .column:first-child{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            & > *{
+                border: 0;
+                border-bottom: 2px solid $apiviz-primary;
+                height: rem(50px);
+            }
+
+            .image-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                img{
+                    width: rem(36px);
+                }
+            }
+
+            input{
+
+                width: 100%;
+
+                padding: 0 1em;
+                font-size: 1rem;
+
+                border-radius: 0;
+                box-shadow: none;
+
+                &:focus{
+                    border: 0;
+                    border-bottom: 2px solid $apiviz-primary;
+
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .column:last-child{
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            button{
+                height: rem(50px);
+            }
+        }
+    }
+}
+
+h3.counter{
+    width: initial;
+    padding: 1em 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .counter{
+        font-size: rem(60px);
+        margin-right: 0.2em;
+        font-weight: bold;
+    }
+
+    .text{
+        max-width: 6em;
+        line-height: 1.2;
+    }
+}
+
+.title.is-primary{
+    color: $apiviz-primary;
+}
+.title.is-secondary,
+.counter.is-secondary,
+.text.is-secondary{
+    color: $apiviz-secondary;
+}
+.title.is-centered{
+    text-align: center;
+}
