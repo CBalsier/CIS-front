@@ -33,16 +33,19 @@ default_routes_config = [
     "link_in_logo"      : True,
     "urls"              : ["/"],
     # "template_url"      : "https://raw.githubusercontent.com/co-demos/carto-sonum/master/pages-html/test-apiviz.html",
-    "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/home.html",
+     "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/home.html",
+    "has_ext_script"    : True,
+    "ext_script_url"    : "https://cdn.jsdelivr.net/gh/CBalsier/test-content/scripts/home.js",
     "help"              : u"you can specify a remote template (f.e. a github url)",
     "languages"         : ["fr"],
-      "app_version"       : version,
+    "app_version"       : version,
     "comment"           : u"Main home route in french",
     "is_dynamic"        : True,
     "dynamic_template"  : "DynamicStatic",
     "has_navbar"        : True,
     "has_footer"        : True,
-      "is_default"        : True
+    "dataset_uri"       : "cis",
+    "is_default"        : True
   },
 
 
@@ -1632,7 +1635,9 @@ default_routes_config = [
      "urls"              : ["/nous-rejoindre"],
      # "template_url"      : "https://github.com/co-demos/carto-sonum/blob/master/pages-html/qui-sommes-nous.html?raw=true",
      # "template_url"      : "https://github.com/CBalsier/test-content/blob/master/pages-html/nous-rejoindre.html?raw=true",
-     "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/nous-rejoindre.html",
+      # "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/nous-rejoindre.html",
+      # "template_url"     : "templates/nous-rejoindre.html",
+     #"template_url"      : "https://raw.githubusercontent.com/co-demos/xp-sonum/master/pages-html/accueil-clean.html",
      "help"              : u"you can specify a remote template (f.e. a github url)",
      "languages"         : ["fr"],
        "app_version"        : version,

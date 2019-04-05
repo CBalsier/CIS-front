@@ -90,6 +90,54 @@ main{
     }
 }
 
+.primary-bg-plain{
+    background-color: $apiviz-primary;
+    //display: flex;
+    //flex-direction: column;
+    //align-items: center;
+    width: 100%;
+}
+
+.plop{
+    background-color:blue;
+}
+.grey-bg-img{
+    // this image should be of color $cis-primary
+    background-image: url(https://raw.githubusercontent.com/CBalsier/test-content/master/illustrations/HP_section_3.png);
+    background-size: cover;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.padd-6-0{
+    padding: 6em 0;
+}
+
+.marg-top-1{
+    margin-top: 1em;
+}
+
+.marg-bot-3{
+    margin-bottom: 3em;
+}
+
+.max-w-40{
+    max-width:40em;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+}
+
+.img-gallery-6 li{
+    height:6em;
+    & img{
+        max-height: 100%;
+    }
+}
+
+
 h3.counter{
     width: initial;
     padding: 1em 0;
@@ -111,14 +159,119 @@ h3.counter{
     }
 }
 
-.title.is-primary{
+.title.is-primary,
+.columns.is-primary,
+h3.is-primary{
     color: $apiviz-primary;
 }
+
+.title.is-primary-invert,
+p.is-primary-invert{
+    color: $apiviz-primary-invert;
+}
+
 .title.is-secondary,
 .counter.is-secondary,
 .text.is-secondary{
     color: $apiviz-secondary;
 }
+
 .title.is-centered{
     text-align: center;
 }
+
+iframe{
+    height: 100%;
+}
+
+
+// TODO: USE BULMA-CAROUSEL! 
+    section#témoignages {
+
+        .background{
+            background-image:           url(https://raw.githubusercontent.com/CBalsier/test-content/master/illustrations/HP_section_5.png);
+            background-size: cover;
+            background-color: transparent;
+    
+            padding-top: 6em;
+        }
+
+        h1{
+            text-align: center;
+            color: $apiviz-primary;
+        }
+    
+        ul li img{
+            height: 10em;
+            margin-bottom: 1em;
+        }
+    
+        .caroussel{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            button{
+                border: 0;
+                font-size: 2em;
+                font-weight: bold;
+
+                background-repeat: no-repeat;
+                background-color: transparent;
+                
+                &:focus,
+                &:active{
+                    box-shadow: none;
+                    border: 0;
+                }
+
+                &.previous{
+                    background-image: url('/static/icons/icon_chevron2.svg');
+                }
+                &.next{
+                    background-image: url('/static/icons/icon_chevron1.svg');
+                }
+            }
+        }
+    
+        $CAROUSSEL_ELEMENT_WIDTH: 17em;
+
+        .caroussel-container{
+            width: $CAROUSSEL_ELEMENT_WIDTH * 3;
+            overflow: hidden;
+
+            ul.caroussel-content{
+                white-space: nowrap;
+                padding-bottom: 2em;
+
+                li{
+                    width: $CAROUSSEL_ELEMENT_WIDTH;
+                    padding: 0 0.5em;
+            
+                    background-color: transparent;
+                    white-space: normal;
+
+                    vertical-align: top;
+            
+                    display: inline-flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .text{
+                        font-size: 0.9em;
+                        line-height: 1.2em;
+                        background-color: white;
+                        padding: 1em;
+                        box-shadow: $apiviz-discrete-shadow;
+
+                        h1{
+                            color: $apiviz-primary;
+                            font-weight: bold;
+                            margin-bottom: 1em;
+                        }
+                    }
+                }
+            }
+        }
+    }

@@ -60,8 +60,16 @@ export default {
 
   mounted(){
     // console.log("\n - - DynamicStatic / mounted ... ")
-
     this.getRawHtml()
+
+    if (this.routeConfig && this.routeConfig.has_ext_script) {
+      let ext_script_url = this.routeConfig.ext_script_url;
+      let extScript = document.createElement('script');
+      extScript.setAttribute('src', ext_script_url);
+      document.head.appendChild(extScript);
+
+    }
+
     // // hack to scroll top because vue-router scrollBehavior thing doesn't seem to work on Firefox on Linux at least
     // const int = setInterval(() => {
     //   if(window.pageYOffset < 50){
@@ -106,14 +114,14 @@ export default {
       console.log(template_url + " is template")
       let head = {
         headers: {
-          'Access-Control-Allow-Origin': '*', // Uncommented, to try
+        //  'Access-Control-Allow-Origin': '*', // Uncommented, to try
           'accept' : 'text/html',
         }
       }
       this.rawHtml = ''
       axios.get(template_url, head)
         .then( (response) => {
-          console.log(response);
+          //console.log(response);
           this.rawHtml = (response && response.data) ? response.data : '<br><br>there is an Error <br><br>'}
         )
         .catch( (err) => {this.rawHtml = '<br><br>there is an <strong> Error </strong><br><br>'} )
