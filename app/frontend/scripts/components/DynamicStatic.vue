@@ -62,6 +62,9 @@ export default {
     // console.log("\n - - DynamicStatic / mounted ... ")
     this.getRawHtml()
 
+    // Cf:
+    // https://stackoverflow.com/questions/17341122/link-and-execute-external-javascript-file-hosted-on-github
+    // https://stackoverflow.com/questions/45047126/how-to-add-external-js-scripts-to-vuejs-components
     if (this.routeConfig && this.routeConfig.has_ext_script) {
       let ext_script_url = this.routeConfig.ext_script_url;
       let extScript = document.createElement('script');
