@@ -10,6 +10,7 @@ main{
     }
 }
 
+// BACKGROUNDS
 .primary-bg-img{
     // this image should be of color $cis-primary
     background-image: url(https://raw.githubusercontent.com/CBalsier/test-content/master/illustrations/HP_section_1.png);
@@ -95,9 +96,6 @@ main{
 
 .primary-bg-plain{
     background-color: $apiviz-primary;
-    //display: flex;
-    //flex-direction: column;
-    //align-items: center;
     width: 100%;
 }
 
@@ -111,8 +109,18 @@ main{
     align-items: center;
 }
 
+.grey-bg-plain{
+    background-color: $apiviz-grey-background;
+    width: 100%;
+}
+
+// PADDINGS, MARGINS, SPACINGS
 .padd-6-0{
     padding: 6em 0;
+}
+
+.padd-2-1{
+    padding: 2em 1em;
 }
 
 .marg-top-1{
@@ -123,6 +131,10 @@ main{
     margin-bottom: 3em;
 }
 
+.marg-bot-api3{
+    margin-bottom: $apiviz-spacing_3;
+}
+
 .max-w-40{
     max-width:40em;
     text-align: center;
@@ -130,6 +142,10 @@ main{
     margin-bottom: 1.5em;
 }
 
+.h-18{
+    height: 18em;
+    width: 100%;
+}
 .img-gallery-6 li{
     height:6em;
     & img{
@@ -137,28 +153,24 @@ main{
     }
 }
 
+iframe{
+    height: 100%;
+}
 
-h3.counter{
-    width: initial;
-    padding: 1em 0;
+//.embedded-img{
+    //position: relative;
+    //height: 150%;
+    //top: -25%;
+//}
 
+.flex-col{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-
-    .counter{
-        font-size: rem(60px);
-        margin-right: 0.2em;
-        font-weight: bold;
-    }
-
-    .text{
-        max-width: 6em;
-        line-height: 1.2;
-    }
+    justify-content: space-between;
 }
 
+// TITLES
 .title.is-primary,
 .columns.is-primary,
 h3.is-primary{
@@ -166,7 +178,8 @@ h3.is-primary{
 }
 
 .title.is-primary-invert,
-p.is-primary-invert{
+p.is-primary-invert,
+div.is-primary-invert{
     color: $apiviz-primary-invert;
 }
 
@@ -180,10 +193,11 @@ p.is-primary-invert{
     text-align: center;
 }
 
-iframe{
-    height: 100%;
+h2.subtitle{
+    font-size: rem(14px);
 }
 
+// TABS
 .cis-tabs{
     display: flex;
     flex-direction: row;
@@ -214,6 +228,58 @@ iframe{
     }
 }
 
+// CARDS
+.cis-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & > *{
+        padding: 1em;
+        flex: 1;
+    }
+
+    & > * img{
+        height: 7em;
+    }
+
+    .cis-card{
+        padding: 1em;
+
+        p{
+            padding-bottom: 2em;
+        }
+            
+        img{
+            height: 7em;
+        }
+    }
+}
+
+// COUNTER
+h3.counter{
+    width: initial;
+    padding: 1em 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .counter{
+        font-size: rem(60px);
+        margin-right: 0.2em;
+        font-weight: bold;
+    }
+
+    .text{
+        max-width: 6em;
+        line-height: 1.2;
+    }
+}
+
+// CAROUSELS
 .carousel {
     overflow-x: hidden;
     overflow-y: visible;
