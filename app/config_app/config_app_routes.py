@@ -19,7 +19,9 @@ default_routes_config = [
       "activated"  : False,
       "banner_uri" : "banner-sonum-carto"
     },
-
+    "tabs" : {
+      "activated" : False,
+    },
     "in_main_navbar"    : False,
     "navbar_btn_options" : {
       "position"   : "middle_left",
@@ -1117,17 +1119,21 @@ default_routes_config = [
     "in_footer"         : False,
     "link_in_logo"      : True,
     "urls"              : ["/le-projet"],
-     #"template_url"      : "templates/le-projet.html",
+    "dataset_uri"       : "project-cis",
     "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/le-projet.html",
+    "has_ext_script"    : True,
+    "ext_script_url"    : "https://cdn.jsdelivr.net/gh/CBalsier/test-content/scripts/project.js",
     "help"              : u"you can specify a remote template (f.e. a github url)",
     "languages"         : ["fr"],
-      "app_version"       : version,
+    "app_version"       : version,
     "comment"           : u"Main project route in french",
     "is_dynamic"        : True,
     "dynamic_template"  : "DynamicStatic",
     "has_navbar"        : True,
+    "has_tabs"          : True,
+    "tabs_uri"          : "project-cis-tabs",
     "has_footer"        : True,
-      "is_default"        : True
+    "is_default"        : True
   },
     ### PAGE - map
     { "field"             : "cis_carte",

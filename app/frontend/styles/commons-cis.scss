@@ -114,6 +114,48 @@ main{
     width: 100%;
 }
 
+.team-bg-img{
+    background-image:
+    url('https://raw.githubusercontent.com/CBalsier/test-content/master/photos/180620_CollectifCIS_photos (2)_scale_0.5.jpg');
+    background-size: cover;
+    background-position: bottom;
+    height:20em;
+    position:relative;
+    left:5em;
+
+    ul{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to top, rgba(0,0,0, 0.5), rgba(0,0,0, 0));
+
+        display: flex;
+        justify-content: flex-start;
+
+        color: white;
+
+        li{
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+
+            margin-right: 1em;
+            padding: 1em;
+
+            width: 6em;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .nb{
+                font-size: 2em;
+            }
+        }
+    }
+}
+
 // PADDINGS, MARGINS, SPACINGS
 .padd-6-0{
     padding: 6em 0;
@@ -123,8 +165,20 @@ main{
     padding: 2em 1em;
 }
 
+.padd-1-2{
+    padding: 1em 2em;
+}
+
+.padd-2{
+    padding: 2em;
+}
+
 .marg-top-1{
     margin-top: 1em;
+}
+
+.marg-1-0{
+    margin: 1em 0;
 }
 
 .marg-bot-3{
@@ -135,11 +189,23 @@ main{
     margin-bottom: $apiviz-spacing_3;
 }
 
+.marg-bot-api4{
+    margin-bottom: $apiviz-spacing_4;
+}
+
 .max-w-40{
     max-width:40em;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 1.5em;
+}
+
+.max-w-26{
+    max-width:26em;
+}
+
+.max-h-175p{
+    max-height:175%;
 }
 
 .h-18{
@@ -157,12 +223,6 @@ iframe{
     height: 100%;
 }
 
-//.embedded-img{
-    //position: relative;
-    //height: 150%;
-    //top: -25%;
-//}
-
 .flex-col{
     display: flex;
     flex-direction: row;
@@ -170,9 +230,14 @@ iframe{
     justify-content: space-between;
 }
 
+.flex-1{
+    flex: 1;
+}
+
 // TITLES
 .title.is-primary,
 .columns.is-primary,
+ul.is-primary,
 h3.is-primary{
     color: $apiviz-primary;
 }
@@ -193,17 +258,54 @@ div.is-primary-invert{
     text-align: center;
 }
 
+.is-bold{
+    font-weight: bold;
+}
+
 h2.subtitle{
     font-size: rem(14px);
 }
 
+// LINKS
+p a.colored{
+    color: $apiviz-primary;
+    text-decoration: underline;
+}
+
+a.link-primary, 
+a.link-on-primary{
+    display: inline-block;
+    margin-top: 1em;
+    text-indent: 0.2em;
+    padding-right: 0.2em;
+    border-bottom: 1px solid currentColor;
+    font-weight: normal;
+}
+
+a.link-primary{
+    color: $apiviz-primary;
+    &:hover{
+        color: $apiviz-primary-invert;
+        background-color: $apiviz-primary;
+    }
+}
+
+a.link-on-primary{
+    color: $apiviz-primary-invert;
+    &:hover{
+        color: $apiviz-primary;
+        background-color: $apiviz-primary-invert;
+    }
+}
+
 // TABS
-.cis-tabs{
+// Already in commons.scss?
+/*.cis-tabs{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 
-    padding-top: $apiviz-spacing_4;
+    //padding-top: $apiviz-spacing_4;
     margin-top: $apiviz-spacing_3;
     margin-bottom: $apiviz-spacing_3;
 
@@ -227,7 +329,7 @@ h2.subtitle{
         }
     }
 }
-
+*/
 // CARDS
 .cis-cards{
     display: flex;
@@ -312,6 +414,24 @@ h3.counter{
 	}
 
 }
+
+// LISTS
+.equipe li{
+    width: 17em;
+    padding: 1em 3em;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    img{
+        border-radius: 50%;
+        margin-bottom: 1em;
+    }
+}
+
 
 // Animation: bar unter the text, filling itself when hovered
 .navbar-item:not(.selected) a:not(.selected),

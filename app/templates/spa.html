@@ -26,10 +26,11 @@
 		{% if config_name == "production" %}
 
 		{% endif %}
-		
-		{# <link rel="stylesheet" href="{{ url_for('static', filename='build/bundle.css') }}"> #}
-		<link rel="stylesheet" href="/static/build/bundle.css?18">
 
+		{# <link rel="stylesheet" href="{{ url_for('static', filename='build/bundle.css') }}"> #}
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
+
+		<link rel="stylesheet" href="/static/build/bundle.css?18">
 
 		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js" crossorigin="anonymous"></script>
 
@@ -51,7 +52,7 @@
 		{% endif %}
 
 		{# HACK CACHING : https://stackoverflow.com/questions/32414/how-can-i-force-clients-to-refresh-javascript-files #}
-		<script defer src="/static/build/bundle.js?1603"></script>
+		<script defer src="/static/build/bundle.js?125"></script>
 
 	</head>
 
