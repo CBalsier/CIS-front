@@ -1579,7 +1579,7 @@ default_routes_config = [
   ### CUSTOM ROUTES-PAGES --> TO BE ADDED VIA BACK OFFICE BY ADMIN USER
   ### - - - - - - - - - - - - - - - - - ###
 
-  ### PAGE : QUI SOMMES-NOUS
+  ### PAGE : QUI SOMMES-NOUS CIS
   { "field"             : "app_who_fr",
     "is_global_app_homepage" : False,
     "route_title"        : u"Home",
@@ -1615,7 +1615,41 @@ default_routes_config = [
       "is_default"        : True
   },
 
-   ### PAGE : JOIN US/NOUS REJOINDRE
+  ### PAGE : QUI-SOMMES-NOUS/QUI-FAIT-QUOI
+  { "field"             : "cis_partners",
+  "is_global_app_homepage" : True,
+  "route_title"       : u"Outils",
+  "route_description" : u"apiviz default tools page",
+  "route_activated"   : True,
+  "banner" : {
+  "activated"  : False,
+  "banner_uri" : ""
+  },
+  "in_main_navbar"    : False,
+  "navbar_btn_options" : {
+  "position"   : "middle_right",
+  "link_type"  : "link",
+  "icon_class" : "",
+  "link_text"  : [{"locale" : "fr", "text" : "" }],
+  "tooltip"    : [{"locale" : "fr", "text" : "" }],
+  },
+
+  "in_footer"         : True,
+  "link_in_logo"      : False,
+  "urls"              : ["/qui-sommes-nous/qui-fait-quoi"],
+  "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/qui-fait-quoi.html",
+  "help"              : u"you can specify a remote template (f.e. a github url)",
+  "languages"         : ["fr"],
+  "app_version"       : version,
+  "comment"           : u"Main apiviz tools route in french",
+  "is_dynamic"        : True,
+  "dynamic_template"  : "DynamicStatic",
+  "has_navbar"        : True,
+  "has_footer"        : True,
+  "is_default"        : True
+  },
+
+   ### PAGE : JOIN US/NOUS REJOINDRE CIS
    { "field"             : "app_join_us",
      "is_global_app_homepage" : False,
      "route_title"        : u"Home",
@@ -1640,8 +1674,7 @@ default_routes_config = [
      "link_in_logo"      : False,
      "urls"              : ["/nous-rejoindre"],
      # "template_url"      : "https://github.com/co-demos/carto-sonum/blob/master/pages-html/qui-sommes-nous.html?raw=true",
-     # "template_url"      : "https://github.com/CBalsier/test-content/blob/master/pages-html/nous-rejoindre.html?raw=true",
-      # "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/nous-rejoindre.html",
+     "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/nous-rejoindre.html",
       # "template_url"     : "templates/nous-rejoindre.html",
      #"template_url"      : "https://raw.githubusercontent.com/co-demos/xp-sonum/master/pages-html/accueil-clean.html",
      "help"              : u"you can specify a remote template (f.e. a github url)",
@@ -1655,7 +1688,7 @@ default_routes_config = [
        "is_default"        : True
    },
 
-  ### PAGES : TOOLS
+  ### PAGES : TOOLS (GENERIC)
   { "field"              : "app_outils",
     "is_global_app_homepage" : False,
     "route_title"        : u"Outils",
@@ -1690,8 +1723,8 @@ default_routes_config = [
       "is_default"        : True
   },
 
-    ### PAGE TOOLS - FR
-    { "field"             : "app_tools",
+  ### PAGE TOOLS - FR - APIVIZ
+  { "field"             : "app_tools",
       "is_global_app_homepage" : True,
       "route_title"       : u"Outils",
       "route_description" : u"apiviz default tools page",
@@ -1723,5 +1756,112 @@ default_routes_config = [
       "has_footer"        : True,
         "is_default"        : True
     },
+
+  ### PAGE : PROJECT/TOOLS (CIS)
+  { "field"             : "cis_tools",
+      "is_global_app_homepage" : True,
+      "route_title"       : u"Outils",
+      "route_description" : u"apiviz default tools page",
+      "route_activated"   : True,
+      "banner" : {
+        "activated"  : False,
+        "banner_uri" : ""
+      },
+      "in_main_navbar"    : False,
+      "navbar_btn_options" : {
+        "position"   : "middle_right",
+        "link_type"  : "link",
+        "icon_class" : "",
+        "link_text"  : [{"locale" : "fr", "text" : "" }],
+        "tooltip"    : [{"locale" : "fr", "text" : "" }],
+      },
+
+      "in_footer"         : True,
+      "link_in_logo"      : False,
+      "urls"              : ["/le-projet/outils"],
+      "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/les-outils.html",
+      "help"              : u"you can specify a remote template (f.e. a github url)",
+      "languages"         : ["fr"],
+        "app_version"       : version,
+      "comment"           : u"Main apiviz tools route in french",
+      "is_dynamic"        : True,
+      "dynamic_template"  : "DynamicStatic",
+      "has_navbar"        : True,
+      "has_footer"        : True,
+        "is_default"        : True
+    },
+
+  ### PAGE : PROJECT/PARLENT-DE-NOUS (CIS)
+  { "field"             : "cis_review",
+      "is_global_app_homepage" : True,
+      "route_title"       : u"Outils",
+      "route_description" : u"apiviz default tools page",
+      "route_activated"   : True,
+      "banner" : {
+        "activated"  : False,
+        "banner_uri" : ""
+      },
+      "in_main_navbar"    : False,
+      "navbar_btn_options" : {
+        "position"   : "middle_right",
+        "link_type"  : "link",
+        "icon_class" : "",
+        "link_text"  : [{"locale" : "fr", "text" : "" }],
+        "tooltip"    : [{"locale" : "fr", "text" : "" }],
+      },
+
+      "in_footer"         : True,
+      "link_in_logo"      : False,
+      "urls"              : ["/le-projet/parlent-de-nous"],
+      "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/parlent-de-nous.html",
+      "help"              : u"you can specify a remote template (f.e. a github url)",
+      "languages"         : ["fr"],
+        "app_version"       : version,
+      "comment"           : u"Main apiviz tools route in french",
+      "is_dynamic"        : True,
+      "dynamic_template"  : "DynamicStatic",
+      "has_navbar"        : True,
+      "has_footer"        : True,
+        "is_default"        : True
+    },
+
+
+  ### PAGE : PROJECT/RECOMPENSES
+  { "field"             : "cis_rewards",
+      "is_global_app_homepage" : True,
+      "route_title"       : u"Outils",
+      "route_description" : u"apiviz default tools page",
+      "route_activated"   : True,
+      "banner" : {
+        "activated"  : False,
+        "banner_uri" : ""
+      },
+      "in_main_navbar"    : False,
+      "navbar_btn_options" : {
+        "position"   : "middle_right",
+        "link_type"  : "link",
+        "icon_class" : "",
+        "link_text"  : [{"locale" : "fr", "text" : "" }],
+        "tooltip"    : [{"locale" : "fr", "text" : "" }],
+      },
+
+      "in_footer"         : True,
+      "link_in_logo"      : False,
+      "urls"              : ["/le-projet/recompenses"],
+      "template_url"      : "https://raw.githubusercontent.com/CBalsier/test-content/master/pages-html/recompenses.html",
+      "help"              : u"you can specify a remote template (f.e. a github url)",
+      "languages"         : ["fr"],
+        "app_version"       : version,
+      "comment"           : u"Main apiviz tools route in french",
+      "is_dynamic"        : True,
+      "dynamic_template"  : "DynamicStatic",
+      "has_navbar"        : True,
+      "has_footer"        : True,
+        "is_default"        : True
+    },
+
+
   ### ...
+
+
 ]
