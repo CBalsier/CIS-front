@@ -13,7 +13,7 @@ main{
 // BACKGROUNDS
 .primary-bg-img{
     // this image should be of color $cis-primary
-    background-image: url(https://raw.githubusercontent.com/CBalsier/test-content/master/illustrations/HP_section_1.png);
+    background-image: url(https://raw.githubusercontent.com/co-demos/cis-data/master/illustrations/HP_section_1.png);
     background-size: cover;
     background-color: transparent;
 
@@ -101,7 +101,7 @@ main{
 
 .grey-bg-img{
     // this image should be of color $cis-primary
-    background-image: url(https://raw.githubusercontent.com/CBalsier/test-content/master/illustrations/HP_section_3.png);
+    background-image: url(https://raw.githubusercontent.com/co-demos/cis-data/master/illustrations/HP_section_3.png);
     background-size: cover;
     background-color: transparent;
     display: flex;
@@ -116,7 +116,7 @@ main{
 
 .team-bg-img{
     background-image:
-    url('https://raw.githubusercontent.com/CBalsier/test-content/master/photos/180620_CollectifCIS_photos (2)_scale_0.5.jpg');
+    url('https://raw.githubusercontent.com/co-demos/cis-data/master/photos/180620_CollectifCIS_photos (2)_scale_0.5.jpg');
     background-size: cover;
     background-position: bottom;
     height:20em;
@@ -484,6 +484,151 @@ h3.counter{
     }
 }
 
+// PARTNERS
+.choices{
+    max-width: 45em;
+
+    label{
+        width: 15em;
+        vertical-align: top;
+    }
+    input[type="checkbox"]{
+        margin-right: 1em;
+    }
+}
+ul.members{
+    text-align: left;
+    margin-top: 2em;  
+
+    & > li{
+        display: inline-block;
+
+        $mention-spacing: 1%;
+
+        margin: $mention-spacing;
+
+        width: 100%;
+
+        @media (min-width: 40em){
+            width: 100%/2 - 2*$mention-spacing;
+        }   
+
+        vertical-align: top;
+
+        background-color: white;
+
+        box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.04);
+
+        & > *{
+            padding: 0 1em;
+        }
+        & > :first-child{
+            padding-top: 1em;
+        }
+        & > :last-child{
+            padding-bottom: 1em;
+        }
+
+
+        header{
+            padding-bottom: 1em;
+
+            & > :first-child{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            & > :first-child img{
+                object-fit: contain;
+                object-position: center;
+
+                max-height: 20vh;
+                width: 50%;
+                margin-right: 1em;
+            }
+
+            ul.activities {
+                flex:1;
+
+                li{
+                    font-size: rem(12px);
+                    background-color: #767676;
+                    color: white;
+                    padding: 0.2em 0.5em;
+                    margin-right: 0.5em;
+
+                    display: inline-block;
+                }
+            }
+
+            h1{
+                display: inline-block;
+                margin-right: 1em;
+
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+
+            .scale{
+                font-size: rem(12px);
+                white-space: nowrap;
+                color: rgba(61, 58, 57, 1);
+            }
+        }
+
+
+        footer{
+            background-color: $apiviz-grey-background;
+            position: relative;
+
+            font-size: 0.8em;
+
+            margin-top: 3em;
+            padding-top: 1em;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img{
+                position: absolute;
+
+                width: 5em;
+                height: 5em;
+
+                object-fit: cover;
+                object-position: center;
+
+                left: 2em;
+                top: -2em;
+
+                border-radius: 50%;
+            }
+
+            .person{
+                margin-left: 8em;
+            }
+
+            .count{
+                color: $apiviz-primary;
+                max-width: 9em;
+
+                display: flex;
+                align-items: center;
+
+                .nb{
+                    font-size: 3em;
+
+                    margin-right: 0.1em;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+
 // CAROUSELS
 .carousel {
     overflow-x: hidden;
@@ -581,7 +726,7 @@ html[lang="en"] nav #navbar-main .navbar-item [lang="en"] {
     section#témoignages {
 
         .background{
-            background-image:           url(https://raw.githubusercontent.com/CBalsier/test-content/master/illustrations/HP_section_5.png);
+            background-image:           url(https://raw.githubusercontent.com/co-demos/cis-data/master/illustrations/HP_section_5.png);
             background-size: cover;
             background-color: transparent;
 
