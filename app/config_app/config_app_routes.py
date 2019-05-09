@@ -47,6 +47,7 @@ default_routes_config = [
     "has_navbar"        : True,
     "has_footer"        : True,
     "dataset_uri"       : "cis",
+    "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
     "is_default"        : True
   },
 
@@ -1133,6 +1134,7 @@ default_routes_config = [
     "has_tabs"          : True,
     "tabs_uri"          : "project-cis-tabs",
     "has_footer"        : True,
+    "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
     "is_default"        : True
   },
     ### PAGE - map
@@ -1271,7 +1273,8 @@ default_routes_config = [
       "has_footer"        : True,
       "deactivate_btn"    : False,
       "is_visible"        : True,
-        "is_default"      : True
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
+      "is_default"      : True
     },
 
     ### PAGE - list
@@ -1403,7 +1406,8 @@ default_routes_config = [
       "has_footer"        : True,
       "deactivate_btn"    : False,
       "is_visible"        : True,
-        "is_default"        : True
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
+      "is_default"        : True
     },
 
     ### PAGE - detail
@@ -1572,7 +1576,8 @@ default_routes_config = [
       "has_footer"        : True,
       "deactivate_btn"    : False,
       "is_visible"        : True,
-        "is_default"        : True
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
+      "is_default"        : True
     },
 
   ### - - - - - - - - - - - - - - - - - ###
@@ -1612,7 +1617,8 @@ default_routes_config = [
     "dynamic_template"  : 'DynamicStatic',
     "has_navbar"        : True,
     "has_footer"        : True,
-      "is_default"        : True
+    "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
+    "is_default"        : True
   },
 
   ### PAGE : QUI-SOMMES-NOUS/QUI-FAIT-QUOI
@@ -1649,6 +1655,7 @@ default_routes_config = [
     "dynamic_template"  : "DynamicStatic",
     "has_navbar"        : True,
     "has_footer"        : True,
+    "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
     "is_default"        : True
   },
 
@@ -1688,7 +1695,8 @@ default_routes_config = [
      "dynamic_template"  : 'DynamicStatic',
      "has_navbar"        : True,
      "has_footer"        : True,
-       "is_default"        : True
+     "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
+     "is_default"        : True
    },
 
   ### PAGES : TOOLS (GENERIC)
@@ -1723,7 +1731,8 @@ default_routes_config = [
     "dynamic_template"  : None,
     "has_navbar"        : True,
     "has_footer"        : True,
-      "is_default"        : True
+    "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
+    "is_default"        : True
   },
 
   ### PAGE TOOLS - FR - APIVIZ
@@ -1757,7 +1766,8 @@ default_routes_config = [
       "dynamic_template"  : "DynamicStatic",
       "has_navbar"        : True,
       "has_footer"        : True,
-        "is_default"        : True
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
+      "is_default"        : True
     },
 
   ### PAGE : PROJECT/TOOLS (CIS)
@@ -1791,7 +1801,8 @@ default_routes_config = [
       "dynamic_template"  : "DynamicStatic",
       "has_navbar"        : True,
       "has_footer"        : True,
-        "is_default"        : True
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
+      "is_default"        : True
     },
 
   ### PAGE : PROJECT/PARLENT-DE-NOUS (CIS)
@@ -1825,7 +1836,8 @@ default_routes_config = [
       "dynamic_template"  : "DynamicStatic",
       "has_navbar"        : True,
       "has_footer"        : True,
-        "is_default"        : True
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
+      "is_default"        : True
     },
 
 
@@ -1860,7 +1872,8 @@ default_routes_config = [
       "dynamic_template"  : "DynamicStatic",
       "has_navbar"        : True,
       "has_footer"        : True,
-        "is_default"        : True
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
+      "is_default"        : True
     },
 
 

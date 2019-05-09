@@ -20,6 +20,7 @@ default_data_endpoints_config = [
       "app_version"   : version,
       "method"        : "GET",
       "help"          : u"define the endpoint for a JWT check",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -35,6 +36,7 @@ default_data_endpoints_config = [
       "app_version"   : version,
       "method"        : "GET",
       "help"          : u"define the endpoint for a new access JWT ",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -50,6 +52,7 @@ default_data_endpoints_config = [
       "method"        : "POST",
       "help"          : u"define the endpoint for registering a new user",
       "needs_form"    : True,
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -65,6 +68,7 @@ default_data_endpoints_config = [
       "method"        : "POST",
       "help"          : u"define the endpoint for login an user",
       "needs_form"    : True,
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -82,6 +86,7 @@ default_data_endpoints_config = [
       "app_version"   : version,
       "method"        : "GET",
       "help"          : u"define the endpoint to get data for : an user ",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -98,6 +103,7 @@ default_data_endpoints_config = [
       "app_version"   : version,
       "method"        : "GET",
       "help"          : u"define the endpoint to get data for : an user ",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -115,6 +121,7 @@ default_data_endpoints_config = [
       "method"        : "PUT",
       "help"          : u"define the endpoint to get data for : an user ",
       "needs_form"    : True,
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -131,6 +138,7 @@ default_data_endpoints_config = [
       "app_version"   : version,
       "method"        : "DELETE",
       "help"          : u"define the endpoint to get data for : an user ",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -146,6 +154,7 @@ default_data_endpoints_config = [
       "method"        : "GET",
       "help"          : u"define the endpoint to get data for : an user ",
       "needs_form"    : True,
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -240,6 +249,7 @@ default_data_endpoints_config = [
       "app_version"    : version,
       "method"        : "GET",
       "help"          : u"define the endpoint to get data for : filters in search navbar",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -265,6 +275,7 @@ default_data_endpoints_config = [
       "app_version"    : version,
       "method"        : "GET",
       "help"          : u"define the endpoint to get data for : a view list",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -284,6 +295,7 @@ default_data_endpoints_config = [
       "app_version"    : version,
       "method"        : "GET",
       "help"          : u"define the endpoint to get data for : a detailled data",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -303,6 +315,7 @@ default_data_endpoints_config = [
       "app_version"    : version,
       "method"        : "GET",
       "help"          : u"define the endpoint to get data for : a stat about the dataset",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 
@@ -345,6 +358,7 @@ default_data_endpoints_config = [
       "app_version"    : version,
       "method"        : "GET",
       "help"          : u"define the endpoint to get data for : map results",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"    : True
     },
 

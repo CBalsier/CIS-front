@@ -107,7 +107,7 @@ default_app_footer = [
         },
 
         "block_center_right" : {
-          "is_visible"  :False,
+          "is_visible"  : False,
           "position"    : "block_top_center_left",
           "title_block" : [{ "locale" : "fr", "text" : "Société numérique", "is_visible" : False}],
           "links"       : [
@@ -201,51 +201,52 @@ default_app_footer = [
           "title_block" : [{ "locale" : "fr", "text" : "Les sites publics", "is_visible" : False}],
           "links"       : [
 
-            { "is_visible" : True,
-              "link_to"    : "https://www.gouvernement.fr/",
-              "is_external_link" : True,
-              "link_type"  : "text",
-              "icon_class" : "",
-              "link_text"  : [{"locale" : "fr", "text" : "gouvernement.fr" }],
-              "tooltip"    : [{"locale" : "fr", "text" : "voir le site" }]
-            },
-            { "is_visible" : True,
-              "link_to"    : "https://www.service-public.fr/",
-              "is_external_link" : True,
-              "link_type"  : "text",
-              "icon_class" : "",
-              "link_text"  : [{"locale" : "fr", "text" : "service-public.fr" }],
-              "tooltip"    : [{"locale" : "fr", "text" : "voir le site" }]
-            },
-            { "is_visible" : True,
-              "link_to"    : "https://www.legifrance.fr/",
-              "is_external_link" : True,
-              "link_type"  : "text",
-              "icon_class" : "",
-              "link_text"  : [{"locale" : "fr", "text" : "legifrance.fr" }],
-              "tooltip"    : [{"locale" : "fr", "text" : "voir le site" }]
-            },
-            { "is_visible" : True,
-              "link_to"    : "https://www.elysee.fr",
-              "is_external_link" : True,
-              "link_type"  : "text",
-              "icon_class" : "",
-              "link_text"  : [{"locale" : "fr", "text" : "elysee.fr" }],
-              "tooltip"    : [{"locale" : "fr", "text" : "voir le site" }]
-            },
-            { "is_visible" : True,
-              "link_to"    : "https://www.data.gouv.fr/",
-              "is_external_link" : True,
-              "link_type"  : "text",
-              "icon_class" : "",
-              "link_text"  : [{"locale" : "fr", "text" : "data.gouv.fr" }],
-              "tooltip"    : [{"locale" : "fr", "text" : "voir le site" }]
-            },
+            # { "is_visible" : True,
+            #   "link_to"    : "https://www.gouvernement.fr/",
+            #   "is_external_link" : True,
+            #   "link_type"  : "text",
+            #   "icon_class" : "",
+            #   "link_text"  : [{"locale" : "fr", "text" : "gouvernement.fr" }],
+            #   "tooltip"    : [{"locale" : "fr", "text" : "voir le site" }]
+            # },
+            # { "is_visible" : True,
+            #   "link_to"    : "https://www.service-public.fr/",
+            #   "is_external_link" : True,
+            #   "link_type"  : "text",
+            #   "icon_class" : "",
+            #   "link_text"  : [{"locale" : "fr", "text" : "service-public.fr" }],
+            #   "tooltip"    : [{"locale" : "fr", "text" : "voir le site" }]
+            # },
+            # { "is_visible" : True,
+            #   "link_to"    : "https://www.legifrance.fr/",
+            #   "is_external_link" : True,
+            #   "link_type"  : "text",
+            #   "icon_class" : "",
+            #   "link_text"  : [{"locale" : "fr", "text" : "legifrance.fr" }],
+            #   "tooltip"    : [{"locale" : "fr", "text" : "voir le site" }]
+            # },
+            # { "is_visible" : True,
+            #   "link_to"    : "https://www.elysee.fr",
+            #   "is_external_link" : True,
+            #   "link_type"  : "text",
+            #   "icon_class" : "",
+            #   "link_text"  : [{"locale" : "fr", "text" : "elysee.fr" }],
+            #   "tooltip"    : [{"locale" : "fr", "text" : "voir le site" }]
+            # },
+            # { "is_visible" : True,
+            #   "link_to"    : "https://www.data.gouv.fr/",
+            #   "is_external_link" : True,
+            #   "link_type"  : "text",
+            #   "icon_class" : "",
+            #   "link_text"  : [{"locale" : "fr", "text" : "data.gouv.fr" }],
+            #   "tooltip"    : [{"locale" : "fr", "text" : "voir le site" }]
+            # },
           ]
         },
 
       },
 
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 

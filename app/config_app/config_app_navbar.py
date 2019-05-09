@@ -90,12 +90,8 @@ default_app_navbar = [
       },
       "is_default"  : True
     },
-]
 
-# CUSTOM NAVBAR for CIS
-custom_app_navbar = [
-
-  ### MAIN NAVBAR
+  ### CIS MAIN NAVBAR
     { "field"       : "app_navbar",
       "content"     : u"CIS navbar",
       "app_version" : version,
@@ -172,6 +168,7 @@ custom_app_navbar = [
           },
         ]
       },
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 ]

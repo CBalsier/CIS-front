@@ -59,10 +59,10 @@ default_global_config = [
   ### LOGO
     { "field"       : "app_logo",
       "content"     : u"apiviz default logo in navbar",
-      "url"         : "https://github.com/entrepreneur-interet-general/CIS-front/blob/master/cis/app/static/logos/CIS/CIS_logo.png?raw=true",
-      # "url"          : "https://github.com/co-demos/carto-sonum/blob/master/logos/logo%2Bmarianne_typo%20sombre%404x.png?raw=true",
+      "url"         : "https://raw.githubusercontent.com/co-demos/cis-data/master/logos/CIS/CIS_logo.png",
       "app_version" : version,
       "help"        : u"The official default logo for your ApiViz instance",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 
@@ -72,6 +72,7 @@ default_global_config = [
       "url"          : "/",
       "app_version" : version,
       "help"        : u"The default favicon for your ApiViz instance",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 
@@ -80,6 +81,7 @@ default_global_config = [
       "app_version" : version,
       "help"        : u"Choose a title for your ApiViz instance",
       "content"     : u"CIS - ApiBêta",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 
@@ -87,6 +89,7 @@ default_global_config = [
       "app_version" : version,
       "help"        : u"Choose a description for your ApiViz instance",
       "content"     : [{ "locale" : "fr", "text" : ""}],
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 
@@ -94,6 +97,7 @@ default_global_config = [
       "app_version" : version,
       "help"        : u"Choose a set of keywords for your ApiViz instance",
       "content"     : u"""dataviz,data visualisation,data visualization,SIG,commons,digital commons,API,opensource,open source,open data,opendata,MIT licence,github,sJS,javascript,python,flask,HTML,CSS,JSON,bulma,Vue.js,sEtalab,co-demos, codemos""",
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 
@@ -102,6 +106,7 @@ default_global_config = [
       "app_version" : version,
       "help"        : u"Choose a welcoming phrase for your ApiViz instance",
       "content"     : [{ "locale" : "fr", "text" : "Bienvenue"}],
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 
@@ -109,6 +114,7 @@ default_global_config = [
       "app_version" : version,
       "help"        : u"Choose a pitch/catchphrase for your ApiViz instance",
       "content"     : [{ "locale" : "fr", "text" : ""}],
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 
@@ -120,6 +126,7 @@ default_global_config = [
       "content"     : [{ "locale" : "fr", "text" : "Code source"}],
       "in_navbar"   : False,
       "in_footer"   : True,
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True,
     },
 
@@ -129,6 +136,7 @@ default_global_config = [
       "help"        : u"Choose a token for indexing your ApiViz instance",
       "content"     : u"",
       "activated"    : False,
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 
@@ -139,6 +147,7 @@ default_global_config = [
       "content"     : u"your_id_or_token",
       "url"         : "",
       "activated"    : False,
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 
@@ -149,6 +158,7 @@ default_global_config = [
       "content"     : u"your_id_or_token",
       "url"         : "",
       "activated"    : False,
+      "apiviz_front_uuid" : "f0a482da-28be-4929-a443-f22ecb03ee68",
       "is_default"  : True
     },
 
