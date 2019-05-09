@@ -230,7 +230,7 @@ export function loadScript(url, callback){
   script.type = "text/javascript";
   script.src = url;
 
-  script.onreadystatechange = callback;
+  //script.onreadystatechange = callback;
   script.onload = callback;
 
   document.head.appendChild(script);
