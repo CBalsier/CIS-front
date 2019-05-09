@@ -86,11 +86,11 @@ def setupDefaultConfig(collection, defaultList, uniqueField="field") :
 
 from app.config_app.config_app_global         import default_global_config
 from app.config_app.config_app_footer         import default_app_footer
-from app.config_app.config_app_navbar         import default_app_navbar, custom_app_navbar
+from app.config_app.config_app_navbar         import default_app_navbar
 from app.config_app.config_app_data_endpoints import default_data_endpoints_config
 from app.config_app.config_app_styles         import default_app_styles_config
 from app.config_app.config_app_routes         import default_routes_config
-from app.config_app.config_app_socials        import default_socials_config, cis_socials_config
+from app.config_app.config_app_socials        import default_socials_config
 
 ### retrieve default config for every collection
 existing_app_config             = list( mongo_config_global.find({}) )
@@ -118,12 +118,10 @@ log_app.debug(">>> existing_socials_config : \n%s \n", pformat(existing_socials_
 setupDefaultConfig( mongo_config_global,           default_global_config )
 setupDefaultConfig( mongo_config_footer,           default_app_footer )
 setupDefaultConfig( mongo_config_navbar,           default_app_navbar )
-setupDefaultConfig( mongo_config_navbar,           custom_app_navbar ) # CUSTOM
 setupDefaultConfig( mongo_config_data_endpoints,   default_data_endpoints_config )
 setupDefaultConfig( mongo_config_app_styles,       default_app_styles_config )
 setupDefaultConfig( mongo_config_routes,           default_routes_config )
 setupDefaultConfig( mongo_config_socials,          default_socials_config )
-setupDefaultConfig( mongo_config_socials,          cis_socials_config ) # CUSTOM
 
 
 
