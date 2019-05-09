@@ -33,7 +33,7 @@ export default {
   name: 'DynamicStatic',
   props:[
     'routeConfig',
-    'navbarConfig'
+    'navbarConfig',
   ],
   data: () => {
     return   {
@@ -61,17 +61,6 @@ export default {
   mounted(){
     // console.log("\n - - DynamicStatic / mounted ... ")
     this.getRawHtml()
-
-    // Cf:
-    // https://stackoverflow.com/questions/17341122/link-and-execute-external-javascript-file-hosted-on-github
-    // https://stackoverflow.com/questions/45047126/how-to-add-external-js-scripts-to-vuejs-components
-    if (this.routeConfig && this.routeConfig.has_ext_script) {
-      let ext_script_url = this.routeConfig.ext_script_url;
-      let extScript = document.createElement('script');
-      extScript.setAttribute('src', ext_script_url);
-      document.head.appendChild(extScript);
-
-    }
 
     // // hack to scroll top because vue-router scrollBehavior thing doesn't seem to work on Firefox on Linux at least
     // const int = setInterval(() => {
@@ -128,12 +117,28 @@ export default {
           this.rawHtml = (response && response.data) ? response.data : '<br><br>there is an Error <br><br>'}
         )
         .catch( (err) => {this.rawHtml = '<br><br>there is an <strong> Error </strong><br><br>'} )
-    },
-    goBack(e){
-      e.preventDefault()
-      this.$router.back()
-    }
-  }
 
-}
+
+    // Cf:
+    // https://stackoverflow.com/questions/17341122/link-and-execute-external-javascript-file-hosted-on-github
+    // https://stackoverflow.com/questions/45047126/how-to-add-external-js-scripts-to-vuejs-components
+    if (this.routeConfig && this.routeConfig.has_ext_script) {
+
+      let ext_script_url = this.routeConfig.ext_script_url;
+      console.log(ext_script_url + " is ext_script")
+      let extScript = document.createElement('script');
+      extScript.setAttribute('src', ext_script_url);
+      extScript.setAttribute('type', "text/javascript");
+      document.head.appendChild(extScript);
+
+    }
+        },
+        goBack(e){
+        e.preventDefault()
+        this.$router.back()
+        }
+
+      }
+
+    }
 </script>
