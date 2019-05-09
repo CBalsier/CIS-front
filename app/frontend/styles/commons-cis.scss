@@ -686,7 +686,7 @@ ul.members{
 
 
 // Animation: bar unter the text, filling itself when hovered
-.navbar-item:not(.selected) a:not(.selected),
+.navbar:not(.search-bar) .container .navbar-item:not(.selected) a:not(.selected),
 .navbar-item:not(.navbar-item-filter) a,
 .cis-tabs li:not(.selected) a{
     color: inherit;
