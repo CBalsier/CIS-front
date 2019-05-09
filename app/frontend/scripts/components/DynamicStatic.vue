@@ -28,6 +28,7 @@
 <script>
 import {mapState} from 'vuex'
 import axios from 'axios'
+import {loadScript, activateCarousel} from '../utils'
 
 export default {
   name: 'DynamicStatic',
@@ -51,6 +52,15 @@ export default {
       // console.log("\n - - DynamicStatic / watch / routeConfig ... ")
       this.rawHtml = ''
       this.getRawHtml()
+    },
+    rawHtml(newRawHtml, oldRawHtml){
+      if (oldRawHtml == '' && newRawHtml != ''){
+        console.log("rawHtml is not blank anymore")
+        this.loadExtScript()
+      }
+      else{
+        console.log(oldRawHtml, newRawHtml)
+      }
     }
   },
 
@@ -118,7 +128,9 @@ export default {
         )
         .catch( (err) => {this.rawHtml = '<br><br>there is an <strong> Error </strong><br><br>'} )
 
-
+    },
+    loadExtScript(){
+    // IMPORT EXT SCRIPT
     // Cf:
     // https://stackoverflow.com/questions/17341122/link-and-execute-external-javascript-file-hosted-on-github
     // https://stackoverflow.com/questions/45047126/how-to-add-external-js-scripts-to-vuejs-components
@@ -132,13 +144,19 @@ export default {
       document.head.appendChild(extScript);
 
     }
-        },
-        goBack(e){
-        e.preventDefault()
-        this.$router.back()
-        }
 
-      }
-
+    // ACTIVATE CAROUSELS
+    if (this.routeConfig && this.routeConfig.has_carousel){
+      console.log("load carousel from utils");
+      loadScript("https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js", activateCarousel);
     }
+    },
+    goBack(e){
+    e.preventDefault()
+    this.$router.back()
+    }
+
+  }
+
+}
 </script>

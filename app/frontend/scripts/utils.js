@@ -108,7 +108,7 @@ export function searchEndpointGenerator(obj) {
   let baseQuery = endpointConfig.root_url + '?'
 
   const appArgs = ['query', 'forMap', 'page', 'perPage', 'onlyGeocoded', 'itemId', 'shuffleSeed' ]
-  
+
   // loop in routeArgs + queries then append to baseQuery
   let argsArray = []
   for (let key in endpointConfigArgs ) {
@@ -221,4 +221,29 @@ export function createSelectedFiltersForSearch(selectedFiltersMap){
   })
   // console.log(filtersUri);
   return filtersUri
+}
+
+export function loadScript(url, callback){
+  console.log("try to load script:", url);
+  var script = document.createElement('script');
+  script.type = "text/javascript";
+  script.src = url;
+
+  script.onreadystatechange = callback;
+  script.onload = callback;
+
+  document.head.appendChild(script);
+}
+
+export function activateCarousel(){
+  console.log("activate carousel from utils")
+  var carousels = bulmaCarousel.attach('.carousel', {
+    slidesToShow: 2,
+    infinite: true,
+    pagination: false
+  });
+
+    // "hacky" way to get custom icons
+  document.getElementsByClassName("slider-navigation-previous")[0].childNodes[0].remove();
+  document.getElementsByClassName("slider-navigation-next")[0].childNodes[0].remove();
 }
