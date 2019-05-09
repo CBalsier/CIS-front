@@ -143,15 +143,15 @@ custom_app_navbar = [
             "link_text"  : [{"locale" : "fr", "text" : "Qui sommes-nous ?" }],
             "tooltip"    : [{"locale" : "fr", "text" : "Plus d’informations sur l’initiative" }]
           },
-          { "is_visible" : True,
-            "position"   : "exterior_right",
-            "link_to"    : "/nous-rejoindre",
-            "is_external_link" : False,
-            "link_type"  : "link", ### show btn border
-            "icon_class" : "",
-            "link_text"  : [{"locale" : "fr", "text" : "Nous rejoindre" }],
-            "tooltip"    : [{"locale" : "fr", "text" : "Pour nous contacter" }]
-          },
+        #  { "is_visible" : True,
+        #    "position"   : "exterior_right",
+        #    "link_to"    : "/nous-rejoindre",
+        #    "is_external_link" : False,
+        #    "link_type"  : "link", ### show btn border
+        #    "icon_class" : "",
+        #    "link_text"  : [{"locale" : "fr", "text" : "Nous rejoindre" }],
+        #    "tooltip"    : [{"locale" : "fr", "text" : "Pour nous contacter" }]
+        #  },
           { "is_visible" : True,
             "position"   : "exterior_right",
             "link_to"    : "",
