@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 """
-main config file --> to keep secret 
+main config file --> to keep secret
 stores main secret keys and app passwords
 """
 
@@ -10,7 +10,7 @@ SECRET_KEY					= "app_very_secret_key"
 
 
 """ HOST / PORT / DOMAIN / SERVER """
-SERVER_NAME_TEST		= "True" 
+SERVER_NAME_TEST		= "True"
 
 
 # """ PORT SOCKETIO """
@@ -18,4 +18,4 @@ SERVER_NAME_TEST		= "True"
 
 
 """ MONGODB """
-MONGO_URI					= 'mongodb://localhost:27017/apiviz'
+MONGO_URI					= 'mongodb://localhost:27017/apiviz_cis_dev'

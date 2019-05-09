@@ -223,6 +223,7 @@ export function createSelectedFiltersForSearch(selectedFiltersMap){
   return filtersUri
 }
 
+// To load external librairies in components
 export function loadScript(url, callback){
   console.log("try to load script:", url);
   var script = document.createElement('script');
@@ -235,9 +236,11 @@ export function loadScript(url, callback){
   document.head.appendChild(script);
 }
 
+// To activate carousels from components
 export function activateCarousel(){
   console.log("activate carousel from utils")
   var carousels = bulmaCarousel.attach('.carousel', {
+    // TODO: give the parameters as args?
     slidesToShow: 2,
     infinite: true,
     pagination: false
